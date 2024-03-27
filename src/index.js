@@ -103,7 +103,7 @@ export default function App() {
             return curr;
           }
         });
-          }} className = 'buttons__equal'>=</button>
+          }} className = 'buttons__equal'><span>{'=>'}</span></button>
       </div>
     </section>
   )

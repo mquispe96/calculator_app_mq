@@ -96,6 +96,8 @@ body, html {
 .buttons__ce:hover::before {
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
 }
 .buttons__ce:hover:active::before {
   border-radius: 10px;
@@ -106,8 +108,8 @@ body, html {
   transition: all 0.2s ease;
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 0;
   height: 0;
   background: rgb(235, 106, 107);
@@ -136,8 +138,10 @@ body, html {
 }
 .buttons__ops:hover:active::before {
   border-radius: 10px;
-  width: 95%;
-  height: 95%;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
 }
 .buttons__ops::before {
   transition: all 0.2s ease;
@@ -154,6 +158,7 @@ body, html {
   transform: translate(-10%, -10%);
   box-shadow: 3px 3px 10px 8px lightgray;
   border-radius: 10px;
+  color: rgb(47, 158, 150);
 }
 .buttons__equal {
   width: 80%;
@@ -161,7 +166,7 @@ body, html {
   border-radius: 50px;
   font-size: 20px;
   position: relative;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   overflow: hidden;
 }
 .buttons__regularBtn {
@@ -202,55 +207,81 @@ body, html {
 }
 
 .equal-light {
-  background: linear-gradient(to right, rgba(12, 47, 70, 0.2) 1%, transparent 40%, transparent 60%, rgba(12, 47, 70, 0.2) 100%);
-  color: rgb(12, 47, 70);
-  border: 2px solid rgba(12, 47, 70, 0.6);
-  box-shadow: inset 0 0 10px rgba(12, 47, 70, 0.4), 0 0 9px 3px rgba(12, 47, 70, 0.4);
+  background: transparent;
+  color: rgb(236, 240, 244);
+  border: 2px solid rgb(12, 47, 70);
+  box-shadow: inset 0 0 10px rgb(12, 47, 70), 0 0 9px 3px rgb(12, 47, 70);
+  z-index: 1;
 }
 .equal-light:hover {
-  box-shadow: inset 0 0 10px rgba(12, 47, 70, 0.8), 0 0 9px 3px rgba(12, 47, 70, 0.8);
+  box-shadow: inset 0 0 10px rgb(12, 47, 70), 0 0 9px 3px rgb(12, 47, 70);
+  color: rgb(12, 47, 70);
 }
 .equal-light:hover::before {
-  transform: translateX(15em);
+  height: 0;
+  top: 50%;
 }
 .equal-light::before {
   content: "";
   position: absolute;
-  left: -50px;
+  z-index: -1;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  top: 0;
-  transition: transform 0.4s ease-in-out;
-  background: linear-gradient(to right, transparent 1%, rgba(12, 47, 70, 0.1) 40%, rgba(12, 47, 70, 0.1) 60%, transparent 100%);
+  transition: all 0.3s ease;
+  background: rgb(12, 47, 70);
 }
 .equal-light:active {
   box-shadow: none;
 }
+.equal-light:active span {
+  right: -50%;
+}
+.equal-light span {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  transition: all 0.3s ease;
+}
 
 .equal-dark {
-  background: linear-gradient(to right, rgba(236, 240, 244, 0.2) 1%, transparent 40%, transparent 60%, rgba(236, 240, 244, 0.2) 100%);
-  color: rgb(236, 240, 244);
-  border: 2px solid rgba(236, 240, 244, 0.6);
-  box-shadow: inset 0 0 10px rgba(236, 240, 244, 0.4), 0 0 9px 3px rgba(236, 240, 244, 0.4);
+  background: transparent;
+  color: rgb(12, 47, 70);
+  border: 2px solid rgb(236, 240, 244);
+  box-shadow: inset 0 0 10px rgb(236, 240, 244), 0 0 9px 3px rgb(236, 240, 244);
+  z-index: 1;
 }
 .equal-dark:hover {
-  box-shadow: inset 0 0 10px rgba(236, 240, 244, 0.8), 0 0 9px 3px rgba(236, 240, 244, 0.8);
+  box-shadow: inset 0 0 10px rgb(236, 240, 244), 0 0 9px 3px rgb(236, 240, 244);
+  color: rgb(236, 240, 244);
 }
 .equal-dark:hover::before {
-  transform: translateX(15em);
+  height: 0;
+  top: 50%;
 }
 .equal-dark::before {
   content: "";
   position: absolute;
-  left: -50px;
+  z-index: -1;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  top: 0;
-  transition: transform 0.4s ease-in-out;
-  background: linear-gradient(to right, transparent 1%, rgba(236, 240, 244, 0.1) 40%, rgba(236, 240, 244, 0.1) 60%, transparent 100%);
+  transition: all 0.3s ease;
+  background: rgb(236, 240, 244);
 }
 .equal-dark:active {
   box-shadow: none;
+}
+.equal-dark:active span {
+  right: -50%;
+}
+.equal-dark span {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  transition: all 0.3s ease;
 }
 
 .mode-dark {
